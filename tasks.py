@@ -2,9 +2,9 @@ def rectangle_area(width, height):
     return height * width
 def is_even(number):
     if number % 2 == 0:
-        return f"Число {number} четное"
+        return True
     else:
-        return f"Число {number} нечетное"
+        return False
 def sum_digits(number):
     sum = 0
     for digit in str(number):
