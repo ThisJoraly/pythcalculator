@@ -1,7 +1,6 @@
 # Калькулятор от артёма из п5-22
 import math
-import sys
-
+v = ""
 print("Калькулятор ОАиП")
 while True:
     print("Введите знак действия (+, -, *, /, **, sqrt, !, sin, cos, tan)")
@@ -21,19 +20,41 @@ while True:
             print("Введите число!")
             continue
     match (v):
-        case "+": print(a + b)
-        case "-": print(a - b)
-        case "*": print(a * b)
+        case "+": add(a, b)
+        case "-": subtract(a, b)
+        case "*": modify(a, b)
         case "/":
             try:
-                print(a / b)
+                divide(a, b)
             except ZeroDivisionError:
                 print("На ноль делить нельзя!")
-        case "**": print(a ** b)
-        case "sqrt": print(math.sqrt(a))
+        case "**": print(pow(a, b))
+        case "sqrt": print(sqrt(a))
         case "!":
-            print(math.factorial(int(a)))
-        case "sin": print(math.sin(a))
-        case "cos": print(math.cos(a))
-        case "tan": print(math.tan(a))
+            print(factorial(a))
+        case "sin": print(sin(a))
+        case "cos": print(cos(a))
+        case "tan": print(tan(a))
         case "q": break
+
+    def add(a, b):
+        return a + b
+    def subtract(a, b):
+        return a - b
+
+    def modify(a, b):
+        return a * b
+    def divide(a, b):
+        return a / b
+    def pow(a, b):
+        return a ** b
+    def sqrt(a):
+        return math.sqrt(a)
+    def factorial(a):
+        return math.factorial(int(a))
+    def sin(a):
+        return math.sin(a)
+    def cos(a):
+        return math.cos(a)
+    def tan(a):
+        return math.tan(a)
