@@ -1,6 +1,46 @@
 # Калькулятор от артёма из п5-22
 import math
 v = ""
+############################################################
+def add(a, b):
+    return a + b
+
+
+def subtract(a, b):
+    return a - b
+
+
+def modify(a, b):
+    return a * b
+
+
+def divide(a, b):
+    return a / b
+
+
+def pow(a, b):
+    return a ** b
+
+
+def sqrt(a):
+    return math.sqrt(a)
+
+
+def factorial(a):
+    return math.factorial(int(a))
+
+
+def sin(a):
+    return math.sin(a)
+
+
+def cos(a):
+    return math.cos(a)
+
+
+def tan(a):
+    return math.tan(a)
+############################################################
 print("Калькулятор ОАиП")
 while True:
     print("Введите знак действия (+, -, *, /, **, sqrt, !, sin, cos, tan)")
@@ -20,41 +60,27 @@ while True:
             print("Введите число!")
             continue
     match (v):
-        case "+": add(a, b)
-        case "-": subtract(a, b)
-        case "*": modify(a, b)
+        case "+": print(add(a, b))
+        case "-": print(subtract(a, b))
+        case "*": print(modify(a, b))
         case "/":
             try:
-                divide(a, b)
+                print(divide(a, b))
             except ZeroDivisionError:
                 print("На ноль делить нельзя!")
         case "**": print(pow(a, b))
-        case "sqrt": print(sqrt(a))
+        case "sqrt":
+            try:
+                print(sqrt(a))
+            except ValueError:
+                print(f"Нельзя найти корень данного числа: {a}")
         case "!":
-            print(factorial(a))
+            try:
+                print(factorial(a))
+            except(ValueError):
+                print("Введите другое число для факториала")
+                continue
         case "sin": print(sin(a))
         case "cos": print(cos(a))
         case "tan": print(tan(a))
         case "q": break
-
-    def add(a, b):
-        return a + b
-    def subtract(a, b):
-        return a - b
-
-    def modify(a, b):
-        return a * b
-    def divide(a, b):
-        return a / b
-    def pow(a, b):
-        return a ** b
-    def sqrt(a):
-        return math.sqrt(a)
-    def factorial(a):
-        return math.factorial(int(a))
-    def sin(a):
-        return math.sin(a)
-    def cos(a):
-        return math.cos(a)
-    def tan(a):
-        return math.tan(a)
